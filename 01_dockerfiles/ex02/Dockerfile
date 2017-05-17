@@ -1,4 +1,4 @@
-FROM ruby
+FROM ruby:2.3.1
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN gem install rails
@@ -9,4 +9,5 @@ COPY . /opt/app
 WORKDIR /opt/app
 
 ONBUILD RUN bundle install
-
+ONBUILD RUN rails db:migrate
+ONBUILD RUN rails db:seed

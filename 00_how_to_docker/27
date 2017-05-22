@@ -1,2 +1,2 @@
-docker service logs $(docker service ps engineering-bay -q | head -n 1) --follow
+docker service logs $(docker service ps engineering-bay -f "name=engineering-bay.1" -q) --follow
 

@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN gem install rails
